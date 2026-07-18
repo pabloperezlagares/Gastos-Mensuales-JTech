@@ -70,6 +70,7 @@ function updateUi() {
   const category = categoryFilter ? categoryFilter.value : '';
   const filteredExpenses = filterExpenses(expenses, { date, category });
   const summary = calculateMonthSummary(expenses, '');
+  const month = date ? date.slice(0, 7) : '';
 
   const list = document.getElementById('expenses-list');
   const totalEl = document.getElementById('total');
@@ -172,6 +173,7 @@ function updateUi() {
 
 function setupApp() {
   const form = document.getElementById('expense-form');
+  const submitButton = form ? form.querySelector('button[type="submit"], input[type="submit"]') : null;
   const filtersForm = document.getElementById('filters-form');
   const clearFiltersButton = document.getElementById('clear-filters-button');
   const dateInput = document.getElementById('date-input');
