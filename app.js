@@ -173,7 +173,6 @@ function updateUi() {
 
 function setupApp() {
   const form = document.getElementById('expense-form');
-  const submitButton = form ? form.querySelector('button[type="submit"], input[type="submit"]') : null;
   const filtersForm = document.getElementById('filters-form');
   const clearFiltersButton = document.getElementById('clear-filters-button');
   const dateInput = document.getElementById('date-input');
@@ -223,14 +222,6 @@ function setupApp() {
     };
 
     form.addEventListener('submit', handleExpenseSubmit);
-
-    if (submitButton) {
-      ['click', 'touchend', 'pointerup'].forEach((eventName) => {
-        submitButton.addEventListener(eventName, (event) => {
-          handleExpenseSubmit(event);
-        });
-      });
-    }
   }
 
   if (resetButton) {
