@@ -1,0 +1,242 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #06111f;
+  color: #ecf2ff;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #06111f 0%, #10253d 100%);
+}
+
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  box-sizing: border-box;
+}
+
+h1, h2, p {
+  margin-top: 0;
+}
+
+.subtitle {
+  color: #8da0ba;
+  margin-bottom: 1.5rem;
+}
+
+.panel {
+  background: rgba(8, 20, 36, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label,
+.controls label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #8da0ba;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+input, select, button {
+  padding: 0.8rem 0.95rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 1rem;
+  background: #10253d;
+  color: #ecf2ff;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #4fc3f7;
+  box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.15);
+}
+
+.btn-submit {
+  grid-column: 1 / -1;
+  padding: 0.95rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-submit:hover,
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.25);
+}
+
+button {
+  cursor: pointer;
+  background: #1d4ed8;
+  color: #fff;
+  font-weight: 600;
+}
+
+.bank-card {
+  border-radius: 20px;
+  padding: 1rem;
+  background: linear-gradient(135deg, #172554, #2563eb);
+  margin-bottom: 1rem;
+}
+
+.bank-card__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  color: #dbeafe;
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: end;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.compact {
+  min-width: 150px;
+  flex: 1 1 180px;
+}
+
+.summary-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+article {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.transactions-panel {
+  padding-top: 1rem;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.transactions-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.expense-main,
+.expense-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.expense-description {
+  font-weight: 600;
+}
+
+.expense-amount {
+  color: #7dd3fc;
+}
+
+.remove-button {
+  padding: 0.45rem 0.7rem;
+  font-size: 0.9rem;
+  background: #dc2626;
+  border: none;
+}
+
+.empty-state,
+.empty {
+  color: #94a3b8;
+}
+
+.ai-output {
+  margin-top: 0.75rem;
+  color: #bae6fd;
+}
+
+#api-key {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .app {
+    padding: 1rem 0.75rem 2rem;
+  }
+
+  .panel {
+    border-radius: 18px;
+    padding: 1rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .compact {
+    min-width: 100%;
+  }
+
+  .panel-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .transactions-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .remove-button {
+    margin-top: 0.25rem;
+  }
+}
